@@ -151,7 +151,7 @@ class Message (object):
     def __repr__ (self):
         return '<%s: %r>' % (self.__class__.__name__, self.message_id)
 
-def prune_container (container):
+def msg_ids (container):
     """(container:Container) : [Container]
     Recursively prune a tree of containers, as described in step 4
     of the algorithm.  Returns a list of the children that should replace
@@ -161,7 +161,7 @@ def prune_container (container):
     # Prune children, assembling a new list of children
     new_children = []
     for ctr in container.children[:]:
-        L = prune_container(ctr)
+        L = msg_ids(ctr)
         new_children.extend(L)
         container.remove_child(ctr)
 
@@ -245,7 +245,7 @@ def thread (msglist):
 
     new_root_set = []
     for container in root_set:
-        L = prune_container(container)
+        L = msg_ids(container)
         new_root_set.extend(L)
 
     root_set = new_root_set
@@ -311,23 +311,11 @@ def thread (msglist):
 
 messages = {}
 msg = []
-def print_container(ctr, message_list = [], depth=0, debug=0):
-    import sys
-    """
-    sys.stdout.write(depth*' ')
-    if debug:
-        # Printing the repr() is more useful for debugging
-        sys.stdout.write(repr(ctr))
-    else:
-        sys.stdout.write(repr(ctr.message and ctr.message.message_id))
-        message_list.append(ctr.message.message_id)
+def msg_ids(ctr, message_list = [], depth=0, debug=0):
 
-    sys.stdout.write('\n')
-    """
-    #message_list.append(ctr.message.message_id)
     for c in ctr.children:
         message_list.append(c.message.message_id)
-        print_container(c, message_list, depth+1)
+        msg_ids(c, message_list, depth+1)
 
 
 def message_details(filename):
@@ -350,6 +338,6 @@ def message_details(filename):
     L.sort()
     for subj, container in L:
         messages[subj] = []
-        print_container(container, messages[subj])
+        msg_ids(container, messages[subj])
     
     return messages
