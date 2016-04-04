@@ -151,7 +151,7 @@ class Message (object):
     def __repr__ (self):
         return '<%s: %r>' % (self.__class__.__name__, self.message_id)
 
-def msg_ids (container):
+def prune_container(container):
     """(container:Container) : [Container]
     Recursively prune a tree of containers, as described in step 4
     of the algorithm.  Returns a list of the children that should replace
