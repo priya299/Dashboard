@@ -1,3 +1,14 @@
+"""
+Author: Priya V
+
+The following code parses the json file 'out.json', which is a perceval output
+to get the message ids.
+Then I have run the threading algorithm over the mbox files
+to group messages belonging to same thread
+and it is written to 'new.json' file.
+
+"""
+
 import json
 import jwzthreading_r as th
 
@@ -9,7 +20,7 @@ with open("out.json") as f:
             try:
                 jfile = json.loads(line)
                 break
-            except ValueError: # Not yet a complete JSON value
+            except ValueError:
                 line += next(f)
         if jfile['Message-ID'] not in msg_ids:
             msg_ids.append(jfile['Message-ID'].strip('<>'))
