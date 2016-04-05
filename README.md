@@ -9,7 +9,7 @@ git clone https://github.com/priya299/Dashboard.git
 
 cd Dashboard
 
-python createjson.py <Perceval Ouputfile> <mbox file>
+python createjson.py 'Perceval Ouputfile' 'mbox file'
 
 eg: python createjson out.json advisory-board-2014-02
 
