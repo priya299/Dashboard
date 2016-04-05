@@ -9,8 +9,8 @@ git clone https://github.com/priya299/Dashboard.git
 
 cd Dashboard
 
-python createjson.py 'Perceval Ouputfile' 'mbox file'
+python createjson.py 'Perceval Ouputfile' 'mbox file' 'output_file'
 
-eg: python createjson out.json advisory-board-2014-02
+eg: python createjson out.json xen-devel-2016-03 new.json
 
 "new.json" json file will be created with each message belong to a single thread having an additional attribute "property". The property attribute will have message id of the first message in the thread.
