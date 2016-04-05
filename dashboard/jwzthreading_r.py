@@ -312,13 +312,24 @@ def thread (msglist):
 messages = {}
 msg = []
 def msg_ids(ctr, message_list = [], depth=0, debug=0):
+    """
+    This function creates a message_list dictionary with messgae IDs
+    as key and list of messages as value.
 
+    :param ctr: Container object
+    :param message_list: dictionary containing message ids
+    :param depth:counter
+    """
     for c in ctr.children:
         message_list.append(c.message.message_id)
         msg_ids(c, message_list, depth+1)
 
 
 def message_details(filename):
+    """
+    :param filename: name of the mbox file
+    :return: dictionary with messages {'message id1':[list of threads]}
+    """
     import mailbox
 
     f = open(filename, 'rb')
