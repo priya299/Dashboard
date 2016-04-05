@@ -33,12 +33,14 @@ def create_json(perceval_out, mbox_files):
         for key, value in messages.iteritems():
             for k in msg_json:
                 if key == k['Message-ID'].strip('<>'):
+                    k['property']=key
                     json.dump(k, f, ensure_ascii=True, indent=4)
+
             if value:
-                for i in value:
+                for key in value:
                     for j in msg_json:
-                        if i == j['Message-ID'].strip('<>'):
-                            j['property'] = i
+                        if key == j['Message-ID'].strip('<>'):
+                            j['property'] = key
                             json.dump(j, f, ensure_ascii=True, indent=4)
                             break
         f.close()
