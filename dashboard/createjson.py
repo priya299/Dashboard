@@ -50,7 +50,7 @@ def create_json(perceval_out, mbox_files):
                 for i in value:
                     for j in msg_json:
                         if i == j['Message-ID'].strip('<>'):
-                            j['property'] = i
+                            j['property'] = key
                             json.dump(j, f, ensure_ascii=True, indent=4)
                             break
         f.close()
