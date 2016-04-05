@@ -161,7 +161,7 @@ def prune_container(container):
     # Prune children, assembling a new list of children
     new_children = []
     for ctr in container.children[:]:
-        L = msg_ids(ctr)
+        L = prune_container(ctr)
         new_children.extend(L)
         container.remove_child(ctr)
 
@@ -245,7 +245,7 @@ def thread (msglist):
 
     new_root_set = []
     for container in root_set:
-        L = msg_ids(container)
+        L = prune_container(container)
         new_root_set.extend(L)
 
     root_set = new_root_set
