@@ -1,12 +1,6 @@
 """
 Author: Priya V
 
-The following code parses the json file 'out.json',
-which is a perceval output to get the message ids.
-Then I have run the threading algorithm over the
-mbox files to group messages belonging to same thread
-and it is written to 'new.json' file.
-
 """
 
 import json
@@ -15,7 +9,7 @@ import sys
 
 msg_ids = []
 msg_json = []
-def create_json(perceval_out, mbox_files):
+def create_json(perceval_out, mbox_files, output_file):
     """
     This function parses the perceval output, which
     is a json file 'out.json' to get the message ids.
@@ -25,6 +19,8 @@ def create_json(perceval_out, mbox_files):
 
     :param perceval_out: perceval output, which is a json file.
     :param mbox_files : mbox file of xen-devel list
+    :param output_file : new.json file containing messages belonging to same thread
+
     """
     with open(perceval_out) as f:
         for line in f:
@@ -39,7 +35,7 @@ def create_json(perceval_out, mbox_files):
                 msg_json.append(jfile)
 
     messages = th.message_details(mbox_files)
-    with open('new.json','a') as f:
+    with open(output_file,'a') as f:
         for key, value in messages.iteritems():
             for k in msg_json:
                 if key == k['Message-ID'].strip('<>'):
@@ -56,5 +52,5 @@ def create_json(perceval_out, mbox_files):
         f.close()
 
 if __name__ == "__main__":
-    create_json(sys.argv[1],sys.argv[2])
+    create_json(sys.argv[1],sys.argv[2],sys.argv[3])
     print "'new.json' file has been created"
