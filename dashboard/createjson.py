@@ -17,7 +17,6 @@ def create_json(mbox_files, output_file):
     the mbox files to group messages belonging to same thread and
     it is written to 'new.json' file.
 
-    :param perceval_out : perceval output containing message ids
     :param mbox_files : mbox file of xen-devel list
     :param output_file : new.json file containing messages belonging to same thread
 
