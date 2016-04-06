@@ -6,37 +6,33 @@ Author: Priya V
 import json
 import jwzthreading_r as th
 import sys
+import perceval.backends as backend
 
 msg_ids = []
 msg_json = []
-def create_json(perceval_out, mbox_files, output_file):
+def create_json(mbox_files, output_file):
     """
-    This function parses the perceval output, which
-    is a json file 'out.json' to get the message ids.
-    Then threading algorithm is run over the mbox files
-    to group messages belonging to same thread
-    and it is written to 'new.json' file.
+    This function uses perceval to parse the mailing list archieve
+    and gets the message ids. Then threading algorithm is run over
+    the mbox files to group messages belonging to same thread and
+    it is written to 'new.json' file.
 
-    :param perceval_out: perceval output, which is a json file.
+    :param perceval_out : perceval output containing message ids
     :param mbox_files : mbox file of xen-devel list
     :param output_file : new.json file containing messages belonging to same thread
 
     """
-    with open(perceval_out) as f:
-        for line in f:
-            while True:
-                try:
-                    jfile = json.loads(line)
-                    break
-                except ValueError:
-                    line += next(f)
-            if jfile['Message-ID'] not in msg_ids:
-                msg_ids.append(jfile['Message-ID'].strip('<>'))
-                msg_json.append(jfile)
+    mbox_parser = backend.mbox.MBox(
+	origin="http://lists.xenproject.org/archives/html/mbox/"+mbox_files,
+	dirpath='.'
+    )
+    perceval_out = mbox_parser.fetch()
+    for item in perceval_out:
+        msg_json.append(item)
 
     messages = th.message_details(mbox_files)
     with open(output_file,'a') as f:
-        for key, value in messages.iteritems():
+        for key, value in messages.items():
             for k in msg_json:
                 if key == k['Message-ID'].strip('<>'):
                     k['property'] = key
@@ -52,5 +48,5 @@ def create_json(perceval_out, mbox_files, output_file):
         f.close()
 
 if __name__ == "__main__":
-    create_json(sys.argv[1],sys.argv[2],sys.argv[3])
-    print "'new.json' file has been created"
+    create_json(sys.argv[1],sys.argv[2])
+    print("new.json file has been created")
