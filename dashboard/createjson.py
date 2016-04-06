@@ -18,7 +18,7 @@ def create_json(mbox_files, output_file):
     it is written to 'new.json' file.
 
     :param mbox_files : mbox file of xen-devel list
-    :param output_file : new.json file containing messages belonging to same thread
+    :param output_file : output file name
 
     """
     mbox_parser = backend.mbox.MBox(
