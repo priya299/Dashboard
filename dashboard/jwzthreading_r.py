@@ -24,6 +24,7 @@ This code is under a BSD-style license; see the LICENSE file for details.
 """
 
 import re
+import urllib.request
 from collections import deque
 
 __all__ = ['Message', 'make_message', 'thread']
@@ -331,24 +332,23 @@ def message_details(filename):
     :return: dictionary with messages {'message id1':[list of threads]}
     """
     import mailbox
+    import os
 
-    f = open(filename, 'rb')
-    mbox = mailbox.UnixMailbox(f)
+    urllib.request.urlretrieve ("http://lists.xenproject.org/archives/html/mbox/"+filename, filename)
+
+    mbox = mailbox.mbox(filename)
     msglist = []
-    while 1:
-        msg = mbox.next()
-        if msg is None:
-            break
-        m = make_message(msg)
+    for message in mbox:
+        m = make_message(message)
         msglist.append(m)
-    f.close()
 
     subject_table = thread(msglist)
 
     L = subject_table.items()
-    L.sort()
+    sorted(L)
     for subj, container in L:
         messages[subj] = []
         msg_ids(container, messages[subj])
-    
+
+    os.remove(filename)
     return messages
