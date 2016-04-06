@@ -5,11 +5,11 @@ The result of the script would be an ElasticSearch search index, with one JSON d
 Instructions
 ============
 
-git clone https://github.com/priya299/Dashboard.git
-
-cd Dashboard
-
-python createjson.py 'Perceval Ouputfile' 'mbox file' 'output_file'
+    git clone https://github.com/priya299/Dashboard.git
+    
+    cd Dashboard
+    
+    python createjson.py 'Perceval Ouputfile' 'mbox file' 'output_file'
 
 eg: python createjson out.json xen-devel-2016-03 new.json
 
