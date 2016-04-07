@@ -17,7 +17,7 @@
 # You should have received a copy of the GNU General Public License
 # along with this program.  If not, see <http://www.gnu.org/licenses/>.
 #
-# Author: Priya V
+# Author: Priya V <vppriya9@gmail.com>
 #
 """
 
@@ -59,6 +59,7 @@ def create_json(mbox_files, output_file):
                     if key == k['Message-ID'].strip('<>'):
                         k['property'] = key
                         json.dump(k, f, ensure_ascii=True, indent=4)
+                        break
                 except KeyError:
                         logging.debug('Received an email without the correct Message Id %s', str(k))
 
