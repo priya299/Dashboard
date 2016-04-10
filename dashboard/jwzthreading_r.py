@@ -328,15 +328,15 @@ def msg_ids(ctr, message_list = [], depth=0, debug=0):
 
 def message_details(filename):
     """
+    This function
     :param filename: name of the mbox file
     :return: dictionary with messages {'message id1':[list of threads]}
     """
     import mailbox
     import os
 
-    urllib.request.urlretrieve ("http://lists.xenproject.org/archives/html/mbox/"+filename, filename)
-
-    mbox = mailbox.mbox(filename)
+    urllib.request.urlretrieve(filename, 'mbox')
+    mbox = mailbox.mbox('mbox')
     msglist = []
     for message in mbox:
         m = make_message(message)
@@ -350,5 +350,5 @@ def message_details(filename):
         messages[subj] = []
         msg_ids(container, messages[subj])
 
-    os.remove(filename)
+    os.remove('mbox')
     return messages
