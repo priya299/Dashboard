@@ -1,4 +1,3 @@
-"""
 #!/usr/bin/env python3
 # -*- coding: utf-8 -*-
 #
@@ -19,7 +18,6 @@
 #
 # Author: Priya V <vppriya9@gmail.com>
 #
-"""
 
 import sys
 import json
@@ -45,23 +43,29 @@ class MboxParser:
 
     def create_json(self, mbox_files, output_file):
         """
+
         This function uses perceval to parse the mailing list archieve
         and gets the message ids. Then threading algorithm is run over
         the mbox files to group messages belonging to same thread and
         it is written to the output file.
+
         :param mbox_files: mbox file of xen-devel list
         :param output_file: output file name
         """
         percevalout = self.getmbox(mbox_files)
+        message_id = ''
         for item in percevalout:
-            msg_json.append(item)
+            message_id = item['data']['Message-ID']
+            if message_id not in msg_ids:
+                msg_ids.append(message_id)
+                msg_json.append(item)
 
         messages = th.message_details(mbox_files)
         with open(output_file,'a') as f:
             for key, value in messages.items():
                 for k in msg_json:
                     try:
-                        if key == k['Message-ID'].strip('<>'):
+                        if key == k['data']['Message-ID'].strip('<>'):
                             k['property'] = key
                             json.dump(k, f, ensure_ascii=True, indent=4)
                             break
@@ -72,7 +76,7 @@ class MboxParser:
                     for i in value:
                         for j in msg_json:
                             try:
-                                if i == j['Message-ID'].strip('<>'):
+                                if i == j['data']['Message-ID'].strip('<>'):
                                     j['property'] = key
                                     json.dump(j, f, ensure_ascii=True, indent=4)
                                     break
@@ -93,6 +97,6 @@ def main():
     print("Output file %s created"%args.output)
 
 if __name__ == "__main__":
-        main()
+    main()
 
 
