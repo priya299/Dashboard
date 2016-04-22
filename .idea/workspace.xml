@@ -2,16 +2,7 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="1309fad2-f52a-423f-801b-b88e752cc770" name="Default" comment="">
-      <change type="DELETED" beforePath="$PROJECT_DIR$/mbox_parser/jwzthreading_r.py" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/mbox_parser/mboxparser.py" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/mbox_parser/new.json" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/mbox_parser/out.json" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/mbox_parser/tests/advisory-board-2014-02" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/mbox_parser/tests/test.py" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/mbox_parser/tests/test1.py" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/mbox_parser/tests/test_mbox_file" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/mbox_parser/tests/xen-devel-2016-03" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/mbox_parser/xen-devel-2016-03" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/.gitignore" afterPath="" />
     </list>
     <ignored path="Dashboard.iws" />
     <ignored path=".idea/workspace.xml" />
@@ -31,20 +22,7 @@
     <favorites_list name="Dashboard" />
   </component>
   <component name="FileEditorManager">
-    <leaf>
-      <file leaf-file-name="test1.py" pinned="false" current-in-tab="true">
-        <entry file="file://$PROJECT_DIR$/tests/test1.py">
-          <provider selected="true" editor-type-id="text-editor">
-            <state vertical-scroll-proportion="0.0">
-              <caret line="0" column="0" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
-              <folding>
-                <element signature="e#0#15#0" expanded="true" />
-              </folding>
-            </state>
-          </provider>
-        </entry>
-      </file>
-    </leaf>
+    <leaf />
   </component>
   <component name="Git.Settings">
     <option name="RECENT_GIT_ROOT_PATH" value="$PROJECT_DIR$" />
@@ -264,10 +242,10 @@
     <servers />
   </component>
   <component name="ToolWindowManager">
-    <frame x="0" y="0" width="1362" height="734" extended-state="5" />
-    <editor active="true" />
+    <frame x="0" y="0" width="1362" height="734" extended-state="4" />
+    <editor active="false" />
     <layout>
-      <window_info id="Project" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" show_stripe_button="true" weight="0.24963072" sideWeight="0.5" order="0" side_tool="false" content_ui="combo" />
+      <window_info id="Project" active="true" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" show_stripe_button="true" weight="0.24963072" sideWeight="0.5" order="0" side_tool="false" content_ui="combo" />
       <window_info id="TODO" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="6" side_tool="false" content_ui="tabs" />
       <window_info id="Event Log" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="-1" side_tool="true" content_ui="tabs" />
       <window_info id="Python Console" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="-1" side_tool="false" content_ui="tabs" />
@@ -292,17 +270,5 @@
   <component name="XDebuggerManager">
     <breakpoint-manager />
     <watches-manager />
-  </component>
-  <component name="editorHistoryManager">
-    <entry file="file://$PROJECT_DIR$/tests/test1.py">
-      <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="0.0">
-          <caret line="0" column="0" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
-          <folding>
-            <element signature="e#0#15#0" expanded="true" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
   </component>
 </project>
