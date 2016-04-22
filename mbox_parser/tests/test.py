@@ -1,5 +1,5 @@
 import unittest
-from createjson import MboxParser
+from mboxparser import MboxParser
 
 class test_mbox_mails(unittest.TestCase):
 
@@ -7,7 +7,7 @@ class test_mbox_mails(unittest.TestCase):
 		self.mparser = MboxParser()
 
 	def test(self):
-		mbox = self.mparser.create_json('xen-devel-2016-03', 'testoutput.json')
+		mbox = self.mparser.mboxparser('xen-devel-2016-03', 'testoutput.json')
 
 
 	def tearDown(self):

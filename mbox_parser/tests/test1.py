@@ -1,5 +1,5 @@
 import unittest
-from createjson import MboxParser
+from mboxparser import MboxParser
 
 class test_mbox_mails(unittest.TestCase):
 
