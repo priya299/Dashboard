@@ -2,22 +2,16 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="1309fad2-f52a-423f-801b-b88e752cc770" name="Default" comment="">
-      <change type="DELETED" beforePath="$PROJECT_DIR$/dashboard/advisory-board-2014-02" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/dashboard/createjson.py" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/dashboard/jwzthreading_r.py" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/dashboard/new.json" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/dashboard/out.json" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/dashboard/test.py" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/dashboard/test_mbox_file" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/dashboard/tests/advisory-board-2014-02" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/dashboard/tests/test.py" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/dashboard/tests/test1.py" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/dashboard/tests/test_mbox_file" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/dashboard/tests/xen-devel-2016-03" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/dashboard/xen-devel-2016-03" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/tests/advisory-board-2014-02" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/tests/test.py" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/tests/test_mbox_file" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/mbox_parser/jwzthreading_r.py" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/mbox_parser/mboxparser.py" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/mbox_parser/new.json" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/mbox_parser/out.json" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/mbox_parser/tests/advisory-board-2014-02" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/mbox_parser/tests/test.py" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/mbox_parser/tests/test1.py" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/mbox_parser/tests/test_mbox_file" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/mbox_parser/tests/xen-devel-2016-03" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/mbox_parser/xen-devel-2016-03" afterPath="" />
     </list>
     <ignored path="Dashboard.iws" />
     <ignored path=".idea/workspace.xml" />
@@ -38,21 +32,11 @@
   </component>
   <component name="FileEditorManager">
     <leaf>
-      <file leaf-file-name="mboxparser.py" pinned="false" current-in-tab="true">
-        <entry file="file://$PROJECT_DIR$/mbox_parser/mboxparser.py">
+      <file leaf-file-name="test1.py" pinned="false" current-in-tab="true">
+        <entry file="file://$PROJECT_DIR$/tests/test1.py">
           <provider selected="true" editor-type-id="text-editor">
             <state vertical-scroll-proportion="0.0">
               <caret line="0" column="0" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
-              <folding />
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file leaf-file-name="test1.py" pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/mbox_parser/tests/test1.py">
-          <provider selected="true" editor-type-id="text-editor">
-            <state vertical-scroll-proportion="0.0">
-              <caret line="13" column="0" selection-start-line="13" selection-start-column="0" selection-end-line="13" selection-end-column="0" />
               <folding>
                 <element signature="e#0#15#0" expanded="true" />
               </folding>
@@ -129,24 +113,6 @@
             </PATH_ELEMENT>
             <PATH_ELEMENT>
               <option name="myItemId" value="Dashboard" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="mbox_parser" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
-            </PATH_ELEMENT>
-          </PATH>
-          <PATH>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="Dashboard" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.ProjectViewProjectNode" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="Dashboard" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="mbox_parser" />
               <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
             </PATH_ELEMENT>
             <PATH_ELEMENT>
@@ -328,21 +294,13 @@
     <watches-manager />
   </component>
   <component name="editorHistoryManager">
-    <entry file="file://$PROJECT_DIR$/mbox_parser/tests/test1.py">
-      <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="0.0">
-          <caret line="13" column="0" selection-start-line="13" selection-start-column="0" selection-end-line="13" selection-end-column="0" />
-          <folding>
-            <element signature="e#0#15#0" expanded="true" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/mbox_parser/mboxparser.py">
+    <entry file="file://$PROJECT_DIR$/tests/test1.py">
       <provider selected="true" editor-type-id="text-editor">
         <state vertical-scroll-proportion="0.0">
           <caret line="0" column="0" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
-          <folding />
+          <folding>
+            <element signature="e#0#15#0" expanded="true" />
+          </folding>
         </state>
       </provider>
     </entry>
