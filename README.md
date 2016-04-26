@@ -9,8 +9,8 @@ Instructions
     
     cd Dashboard
     
-    python3 createjson.py --mbox 'full URL to the mbox file' --output 'output_file'
+    python3 mboxparser.py --mbox 'full URL to the mbox file' --output 'output_file'
 
-    eg: python3 createjson.py --mbox http://lists.xenproject.org/archives/html/mbox/xen-devel-2016-03 --output new.json
+    eg: python3 mboxparser.py --mbox http://lists.xenproject.org/archives/html/mbox/xen-devel-2016-03 --output new.json
 
 "new.json" json file will be created with each message belong to a single thread having an additional attribute "property". The property attribute will have message id of the first message in the thread.
