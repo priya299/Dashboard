@@ -1,4 +1,3 @@
-from collections import Counter
 import json
 import sys
 sys.path.insert(0,'../')
@@ -20,6 +19,13 @@ class Test_Mbox_Mails(unittest.TestCase):
 		self.mparser = MboxParser()
 
 	def test(self):
+		"""
+		This function checks whether the count of values 
+		in dictionary output of jwzthreading_r.py for each
+		Message-ID is equal to the count of property ID in 
+		testoutput.json file.
+		
+		"""
 		value_count=0
 		original_count=0
 		mbox = self.mparser.create_json('xen-devel-2016-05', 'testoutput.json', file=True)
