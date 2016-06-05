@@ -22,22 +22,22 @@ class Test_Mbox_Mails(unittest.TestCase):
 		value_count=0
 		original_count=0
 		mbox = self.mparser.create_json('xen-devel-2016-05', 'testoutput.json', file=True)
-		messages = th.message_details('xen-devel-2016-05',file=True)
+		messages = th.message_details('xen-devel-2016-05', file=True)
 		for key,value in messages.items():
-				value_count=0
-				original_count = len(value)
-				with open('testoutput.json') as f:
-					for line in f:
-						while True:
-							try:
-								jfile=json.loads(line)
-								break
-							except ValueError:
-								line+=next(f)
-						if jfile['property'] == key:
-							value_count = value_count + 1
+			value_count=0
+			original_count = len(value)
+			with open('testoutput.json') as f:
+				for line in f:
+					while True:
+						try:
+							jfile=json.loads(line)
+							break
+						except ValueError:
+							line+=next(f)
+					if jfile['property'] == key:
+						value_count = value_count + 1
 
-				self.assertEquals(original_count+1,value_count,"Equal")
+			self.assertEquals(original_count+1,value_count,"Equal")
 
 	def tearDown(self):
 		del self.mparser

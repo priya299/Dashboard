@@ -326,7 +326,7 @@ def msg_ids(ctr, message_list = [], depth=0, debug=0):
         msg_ids(c, message_list, depth+1)
 
 
-def message_details(filename):
+def message_details(filename, file):
     """
     This function
     :param filename: name of the mbox file
@@ -335,8 +335,10 @@ def message_details(filename):
     import mailbox
     import os
 
-    urllib.request.urlretrieve(filename, 'mbox')
-    mbox = mailbox.mbox('mbox')
+    if file == False:
+        urllib.request.urlretrieve(filename, 'mbox')
+    else:
+        mbox = mailbox.mbox('mbox')
     msglist = []
     for message in mbox:
         m = make_message(message)

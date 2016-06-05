@@ -41,7 +41,7 @@ class MboxParser:
         )
         return mbox_parser.fetch()
 
-    def create_json(self, mbox_files, output_file):
+    def create_json(self, mbox_files, output_file, file=False):
         """
 
         This function uses perceval to parse the mailing list archieve
@@ -60,7 +60,7 @@ class MboxParser:
                 msg_ids.append(message_id)
                 msg_json.append(item)
 
-        messages = th.message_details(mbox_files)
+        messages = th.message_details(mbox_files, file)
         with open(output_file,'a') as f:
             for key, value in messages.items():
                 for k in msg_json:
