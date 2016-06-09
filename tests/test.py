@@ -30,6 +30,7 @@ class Test_Mbox_Mails(unittest.TestCase):
 		original_count=0
 		mbox = self.mparser.create_json('xen-devel-2016-05', 'testoutput.json', file=True)
 		messages = th.message_details('xen-devel-2016-05', file=True)
+		#print(messages.items())
 		for key,value in messages.items():
 			value_count=0
 			original_count = len(value)
@@ -40,7 +41,9 @@ class Test_Mbox_Mails(unittest.TestCase):
 							jfile=json.loads(line)
 							break
 						except ValueError:
-							line+=next(f)
+							line += next(f)
+
+
 					if jfile['property'] == key:
 						value_count = value_count + 1
 
